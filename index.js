@@ -97,3 +97,143 @@ while (countdown > 0) {
   console.log(countdown);
   countdown--;
 }
+
+//CLASS 4/29
+//fizzbuzz homework question:
+//Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz
+
+for (let i = 0; i <= 100; i++) {
+  // if(i%3=== 0 && i%5===0){
+  if (i % 15 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("fizz");
+  } else if (i % 5 === 0) {
+    console.log("buzz");
+  } else {
+    console.log(i);
+  }
+}
+//nested loop
+const statement = "We are CyberEd Partners";
+
+for (let i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+    let x = 0;
+
+    while (x < statement.length) {
+      let letter = statement[x];
+      if (letter === "a") {
+        console.log(i + " Cheers!");
+      }
+      x++;
+    }
+  }
+}
+
+//Arrays
+//empty
+var animalsArr = [];
+console.log(animalsArr);
+//pre-populated
+var dogsArr = [
+  "goldens",
+  "pugs",
+  "pits",
+  "goldens",
+  "pugs",
+  "pits",
+  "goldens",
+  "pugs",
+  "pits",
+  "goldens",
+];
+//index - find index by using [i]; index starts at 0 so the first element of your array will be '0'
+console.log(dogsArr[6]);
+//length
+console.log(dogsArr.length);
+//push -add to END of array
+dogsArr.push("husky");
+console.log(dogsArr);
+//unshift -adds to BEGINNING of your array
+dogsArr.unshift("collie");
+console.log(dogsArr);
+//splice - a better version of delete, takes in two parameters 1. is the index which you what to delene, 2 is how many items you will delete
+dogsArr.splice([1], 7);
+console.log(dogsArr);
+//looping through array
+//for loop example
+const animalArray = ["dog", "cat", "fish", "bird", "bunny"];
+
+for (let i = 0; i < animalArray.length; i++) {
+  console.log(`Index: ${i} - element: ${animalArray[i]}`);
+}
+//while loop example
+let counter = 0;
+while (counter < animalArray.length) {
+  console.log(
+    `Counter (===index): ${counter} - element: ${animalArray[counter]}`
+  );
+  counter++;
+}
+//forEach SPECIFIC FOR ARRAYS - loops through EACH element
+//note the arrow function (ES6)
+animalArray.forEach((animal) => {
+  console.log(`option 2: ${animal}`);
+});
+
+//TASK 1: SUM THE NUMBERS
+let sum = 0;
+const numbers = [2, 3, 6, 1, 7, 10];
+
+for (i = 0; i < numbers.length; i++) {
+  //same as sum = sum + numbers[i]
+  sum += numbers[i];
+}
+// Log the sum
+console.log(sum);
+
+//TASK 2: AVG THE NUMBERS
+for (i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+let average = sum / numbers.length;
+console.log(average);
+
+//OBJECTS
+let teacher = {
+  //key:value
+  firstName: "Daniela",
+  age: 24,
+  favoriteColor: "blue",
+  favoriteFood: ["frosted flakes", "choco chip cookies"],
+};
+//accessing values
+//dot notation - BEST PRACTICE USE THIS
+console.log(teacher.favoriteColor);
+//whole array
+console.log(teacher.favoriteFood);
+//array index
+console.log(teacher.favoriteFood[1]);
+//bracket notation
+console.log(teacher.age);
+
+//FUNCTIONS
+//declaring a function
+function sayHello() {
+  console.log("HELLOOOO WORLD");
+}
+//calling a functiion
+sayHello();
+//function returning value
+function addNum() {
+  return 80 + 50;
+}
+addNum();
+//using values as parameters - MAKES IT REUSABLE
+function sumNumbers(numberOne, numberTwo) {
+  return numberOne + numberTwo;
+}
+
+var result = sumNumbers(5, 92844124);
+console.log("The result is " + result);
