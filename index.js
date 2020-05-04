@@ -237,3 +237,87 @@ function sumNumbers(numberOne, numberTwo) {
 
 var result = sumNumbers(5, 92844124);
 console.log("The result is " + result);
+
+//-------------------CLASS 5/4--------------------------
+//!!!ForEach Exercise (TRY IT OUT)!!!
+// Create an array with 6 of your favorite foods.
+// With the loop of your choice, iterate through the array, but only print out the foods with an even index.
+
+const favoriteFoods = ["steak", "pizza", "apple", "pasta", "pork chops", "pie"];
+
+favoriteFoods.forEach((food, index) => {
+  if (index % 2 === 0) {
+    console.log(food);
+  }
+});
+
+//Find the Largest
+const numberz = [10, 16, 99, 0, 52, 41, 7];
+let currentLargest = numberz[0];
+
+for (let i = 0; i < numberz.length; i++) {
+  if (numberz[i] > currentLargest) {
+    currentLargest = numberz[i];
+  }
+}
+console.log(`The largest number is: ${currentLargest}`);
+
+//CALCULATOR TASK
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+console.log(`"add:"`, addNumbers(2, 3)); // 5
+/* subtract */
+function subtractNumbers(num1, num2) {
+  return num1 - num2;
+}
+console.log("subtract:", subtractNumbers(5, 3)); // 2
+/* multiply */
+function multiplyNumbers(num1, num2) {
+  return num1 * num2;
+}
+console.log("multiply:", multiplyNumbers(10, 5)); // 50
+/* divide */
+function divideNumbers(num1, num2) {
+  return num1 / num2;
+}
+console.log("divide:", divideNumbers(12, 3)); // 4
+/* calculator */
+function calculator(num1, num2, operation) {
+  let calculate;
+  switch (operation) {
+    case "addition":
+      calculate = addNumbers;
+      break;
+    case "subtraction":
+      calculate = subtractNumbers;
+      break;
+    case "multiplication":
+      calculate = multiplyNumbers;
+      break;
+    case "division":
+      calculate = divideNumbers;
+      break;
+    default:
+      return "please provide an operation";
+  }
+  return calculate(num1, num2);
+}
+console.log("calculator:", calculator(20, 10, "addition"));
+
+//if statement
+function calculator(num1, num2, operation) {
+  if (operation === "+") {
+    return addNumbers(num1, num2);
+  } else if (operation === "-") {
+    return subtractNumbers(num1, num2);
+  } else if (operation === "*") {
+    return multiplyNumbers(num1, num2);
+  } else if (operation === "/") {
+    return divideNumbers(num1, num2);
+  }
+}
+console.log(calculator(2, 4, "+")); //6
+console.log(calculator(4, 2, "-")); //2
+console.log(calculator(2, 4, "*")); //8
+console.log(calculator(10, 2, "/")); //5
